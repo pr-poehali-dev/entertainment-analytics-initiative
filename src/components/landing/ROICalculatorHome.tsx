@@ -5,31 +5,31 @@ import { TrendingUp, Target, Briefcase, Palette, Home, BarChart3 } from "lucide-
 const businessTypes = [
   {
     id: "retail",
-    name: "Ритейл",
+    name: "Вклад «Розовый»",
     icon: <Briefcase className="w-6 h-6" />,
-    multiplier: 3.2,
-    description: "E-commerce и магазины",
+    multiplier: 1.16,
+    description: "16% годовых, 6 месяцев",
   },
   {
     id: "real-estate",
-    name: "Недвижимость",
+    name: "Вклад «Максимум»",
     icon: <Home className="w-6 h-6" />,
-    multiplier: 4.1,
-    description: "Агенты и управление",
+    multiplier: 1.18,
+    description: "18% годовых, 12 месяцев",
   },
   {
     id: "artist",
-    name: "Креатив",
+    name: "Накопилка",
     icon: <Palette className="w-6 h-6" />,
-    multiplier: 2.8,
-    description: "Блогеры и артисты",
+    multiplier: 1.12,
+    description: "12% годовых, без срока",
   },
   {
     id: "professional",
-    name: "B2B услуги",
+    name: "Инвест-портфель",
     icon: <Target className="w-6 h-6" />,
-    multiplier: 3.7,
-    description: "Консалтинг и сервисы",
+    multiplier: 1.22,
+    description: "до 22% в год, акции+фонды",
   },
 ]
 
@@ -47,13 +47,11 @@ export default function ROICalculatorHome() {
   const multiplier = selectedBusinessType?.multiplier || 3.2
 
   const calculateROI = (budget: number) => {
-    const baseReturn = budget * multiplier
-    const scaleFactor = budget / 1000000
-    return Math.round(baseReturn * (1 + scaleFactor * 0.3))
+    return Math.round(budget * multiplier)
   }
 
   const calculateMonthlyRevenue = (budget: number) => {
-    return Math.round(calculateROI(budget) / 12)
+    return Math.round((budget * (multiplier - 1)) / 12)
   }
 
   return (
@@ -66,9 +64,9 @@ export default function ROICalculatorHome() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Рассчитайте ROI</h2>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Калькулятор <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">доходности</span></h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Узнайте, какую выручку вы можете получить с нашими маркетинговыми стратегиями
+            Узнайте, сколько вы заработаете, разместив средства в PinkiPay
           </p>
         </motion.div>
 
@@ -93,7 +91,7 @@ export default function ROICalculatorHome() {
             <div className="space-y-8">
               {/* Business Type Selection */}
               <div>
-                <label className="block text-lg font-medium text-white mb-4">Выберите тип бизнеса</label>
+                <label className="block text-lg font-medium text-white mb-4">Выберите продукт</label>
                 <div className="grid grid-cols-2 gap-3">
                   {businessTypes.map((business) => (
                     <motion.button
@@ -127,7 +125,7 @@ export default function ROICalculatorHome() {
 
               {/* Budget Slider */}
               <div>
-                <label className="block text-lg font-medium text-white mb-4">Месячный бюджет на маркетинг</label>
+                <label className="block text-lg font-medium text-white mb-4">Сумма вклада</label>
                 <div className="relative">
                   <input
                     type="range"
@@ -138,7 +136,7 @@ export default function ROICalculatorHome() {
                     onChange={(e) => setSelectedBudget(Number(e.target.value))}
                     className="w-full h-3 bg-gray-700 rounded-lg appearance-none cursor-pointer"
                     style={{
-                      background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${((selectedBudget - 100000) / (2500000 - 100000)) * 100}%, #374151 ${((selectedBudget - 100000) / (2500000 - 100000)) * 100}%, #374151 100%)`,
+                      background: `linear-gradient(to right, #e91e8c 0%, #e91e8c ${((selectedBudget - 100000) / (2500000 - 100000)) * 100}%, #374151 ${((selectedBudget - 100000) / (2500000 - 100000)) * 100}%, #374151 100%)`,
                     }}
                   />
                   <div className="flex justify-between text-sm text-gray-400 mt-2">
@@ -148,19 +146,19 @@ export default function ROICalculatorHome() {
                 </div>
                 <div className="text-center mt-4">
                   <span className="text-3xl font-bold text-white">{formatRub(selectedBudget)} &#8381;</span>
-                  <span className="text-gray-400 ml-2">в месяц</span>
+                  <span className="text-gray-400 ml-2">на вклад</span>
                 </div>
               </div>
 
               {/* Data Disclaimer */}
               <div className="bg-gray-800/30 border border-gray-700/50 rounded-xl p-4">
                 <div className="flex items-center space-x-3 mb-2">
-                  <BarChart3 className="w-5 h-5 text-blue-400" />
-                  <span className="text-sm font-medium text-white">На основе реальных данных</span>
+                  <BarChart3 className="w-5 h-5 text-pink-400" />
+                  <span className="text-sm font-medium text-white">Реальные ставки PinkiPay</span>
                 </div>
                 <p className="text-xs text-gray-400 leading-relaxed">
-                  Прогнозы основаны на реальных показателях наших клиентов из аналогичных
-                  отраслей и бюджетных категорий. Индивидуальные результаты могут отличаться.
+                  Расчёт приблизительный. Точные условия уточняйте при открытии вклада.
+                  Вклады застрахованы АСВ до 1.4 млн ₽.
                 </p>
               </div>
             </div>
@@ -195,9 +193,9 @@ export default function ROICalculatorHome() {
                   />
                   <defs>
                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#3b82f6" />
-                      <stop offset="50%" stopColor="#8b5cf6" />
-                      <stop offset="100%" stopColor="#06d6a0" />
+                      <stop offset="0%" stopColor="#e91e8c" />
+                      <stop offset="50%" stopColor="#a855f7" />
+                      <stop offset="100%" stopColor="#7c3aed" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -211,7 +209,7 @@ export default function ROICalculatorHome() {
                     >
                       {Math.round((calculateROI(selectedBudget) / selectedBudget) * 100)}%
                     </motion.div>
-                    <div className="text-gray-400 text-sm">ROI</div>
+                    <div className="text-gray-400 text-sm">Ставка</div>
                   </div>
                 </div>
               </div>
@@ -219,7 +217,7 @@ export default function ROICalculatorHome() {
               {/* Revenue Cards */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700/50 text-center">
-                  <div className="w-8 h-8 text-green-400 mx-auto mb-2 flex items-center justify-center text-2xl font-bold">&#8381;</div>
+                  <div className="w-8 h-8 text-pink-400 mx-auto mb-2 flex items-center justify-center text-2xl font-bold">&#8381;</div>
                   <motion.div
                     key={`monthly-${selectedBudget}-${selectedBusiness}`}
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -228,11 +226,11 @@ export default function ROICalculatorHome() {
                   >
                     {formatRub(calculateMonthlyRevenue(selectedBudget))}
                   </motion.div>
-                  <div className="text-gray-400 text-sm">Выручка/мес</div>
+                  <div className="text-gray-400 text-sm">Доход в мес.</div>
                 </div>
 
                 <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700/50 text-center">
-                  <TrendingUp className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+                  <TrendingUp className="w-8 h-8 text-purple-400 mx-auto mb-2" />
                   <motion.div
                     key={`annual-${selectedBudget}-${selectedBusiness}`}
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -241,7 +239,7 @@ export default function ROICalculatorHome() {
                   >
                     {formatRub(calculateROI(selectedBudget))}
                   </motion.div>
-                  <div className="text-gray-400 text-sm">Выручка/год</div>
+                  <div className="text-gray-400 text-sm">Итого с доходом</div>
                 </div>
               </div>
             </div>

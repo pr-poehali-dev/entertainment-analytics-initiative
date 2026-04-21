@@ -1,47 +1,47 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { Instagram, Youtube, Shield, CheckCircle, DollarSign } from "lucide-react"
+import { Shield, CheckCircle, Zap } from "lucide-react"
 import AnimatedButton from "./AnimatedButton"
 
 const services = [
   {
-    title: "Таргетированная реклама",
+    title: "PinkiCard — умная карта",
     description:
-      "Стимулируем рост и вовлечение через data-driven рекламу в соцсетях с таргетированными стратегиями для развития бренда.",
+      "Карта с кэшбэком до 10% на все покупки, бесплатным обслуживанием и мгновенными уведомлениями. Работает в 180 странах.",
     mockup: "social",
   },
   {
-    title: "Google Ads",
+    title: "Вклады и накопления",
     description:
-      "Достигаем клиентов в нужный момент с Google Ads, привлекая трафик и продажи через таргетированную рекламу.",
+      "Вклады до 18% годовых с ежемесячным начислением процентов. Гибкие условия: пополнение и снятие без потери процентов.",
     mockup: "google-ads",
   },
   {
-    title: "Email / SMS",
-    description: "Достигаем клиентов через таргетированный email и SMS маркетинг, стимулируя продажи и лояльность.",
+    title: "Переводы и платежи",
+    description: "Мгновенные переводы по номеру телефона, СБП без комиссии, оплата ЖКХ и госуслуг в один клик.",
     mockup: "email",
   },
   {
-    title: "SEO",
+    title: "Кредиты и рассрочка",
     description:
-      "Повышаем видимость в поисковых системах: аудит сайта, анализ ключевых слов и комплексная оптимизация.",
+      "Кредиты наличными до 5 млн ₽ по ставке от 9.9%. Рассрочка 0% на 12 месяцев у партнёров PinkiPay.",
     mockup: "seo",
   },
   {
-    title: "Аналитика",
+    title: "Инвестиции",
     description:
-      "Отслеживаем эффективность и получаем инсайты с комплексной аналитикой для принятия data-driven решений.",
+      "Покупайте акции, облигации и фонды прямо в приложении. Автоматический портфель для начинающих инвесторов.",
     mockup: "analytics",
   },
   {
-    title: "Веб-разработка",
+    title: "Бизнес-аккаунт",
     description:
-      "Создаем сайты любой сложности: от лендингов до крупных порталов, с гибкими тарифами под ваши задачи.",
+      "Расчётный счёт для ИП и ООО, эквайринг от 1.4%, зарплатный проект и интеграция с 1С и бухгалтерией.",
     mockup: "web-dev",
     badges: [
-      { icon: <Shield className="w-4 h-4" />, text: "SSL-защита" },
-      { icon: <DollarSign className="w-4 h-4" />, text: "Без абонплаты" },
-      { icon: <CheckCircle className="w-4 h-4" />, text: "Uptime 99.9%" },
+      { icon: <Shield className="w-4 h-4" />, text: "Защита данных" },
+      { icon: <Zap className="w-4 h-4" />, text: "Открытие за 1 день" },
+      { icon: <CheckCircle className="w-4 h-4" />, text: "АСВ до 1.4 млн" },
     ],
   },
 ]
@@ -59,9 +59,9 @@ export default function InnovativeServices() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Услуги для роста бизнеса</h2>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Продукты <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">PinkiPay</span></h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Индивидуальные решения для оптимизации, инноваций и масштабирования.
+            Всё для ваших финансов — в одном приложении. Удобно, безопасно, выгодно.
           </p>
         </motion.div>
 
@@ -93,7 +93,7 @@ export default function InnovativeServices() {
                       >
                         <div className="bg-gray-800 rounded-lg p-3 h-full">
                           <div className="flex justify-between items-center mb-3">
-                            <div className="text-xs text-gray-400">Платформы</div>
+                            <div className="text-xs text-gray-400">Кэшбэк категории</div>
                             <div className="flex space-x-2">
                               <motion.div
                                 initial={{ scale: 0, opacity: 0 }}
@@ -128,51 +128,51 @@ export default function InnovativeServices() {
                           </div>
                           <div className="space-y-1 mb-3">
                             <motion.div
-                              className="text-white text-xs px-2 py-1 rounded bg-blue-600"
+                              className="text-white text-xs px-2 py-1 rounded bg-pink-600"
                               initial={{ width: "0%" }}
                               whileInView={{ width: "85%" }}
                               transition={{ duration: 1, delay: 0.8 }}
                               viewport={{ once: true }}
                             >
-                              Facebook
+                              Рестораны 10%
                             </motion.div>
                             <motion.div
-                              className="text-white text-xs px-2 py-1 rounded bg-pink-600"
+                              className="text-white text-xs px-2 py-1 rounded bg-fuchsia-600"
                               initial={{ width: "0%" }}
                               whileInView={{ width: "92%" }}
                               transition={{ duration: 1, delay: 1 }}
                               viewport={{ once: true }}
                             >
-                              Instagram
+                              АЗС 7%
                             </motion.div>
                             <motion.div
-                              className="text-white text-xs px-2 py-1 rounded bg-black"
+                              className="text-white text-xs px-2 py-1 rounded bg-purple-700"
                               initial={{ width: "0%" }}
                               whileInView={{ width: "78%" }}
                               transition={{ duration: 1, delay: 1.2 }}
                               viewport={{ once: true }}
                             >
-                              TikTok
+                              Аптеки 5%
                             </motion.div>
                             <motion.div
-                              className="text-black text-xs px-2 py-1 rounded bg-yellow-400"
+                              className="text-white text-xs px-2 py-1 rounded bg-violet-700"
                               initial={{ width: "0%" }}
                               whileInView={{ width: "65%" }}
                               transition={{ duration: 1, delay: 1.4 }}
                               viewport={{ once: true }}
                             >
-                              Snapchat
+                              Всё остальное 3%
                             </motion.div>
                           </div>
                           <div className="flex justify-between items-center">
                             <div>
-                              <div className="text-xs text-gray-400 mb-1">Рост</div>
+                              <div className="text-xs text-gray-400 mb-1">Кэшбэк</div>
                               <motion.div
                                 animate={{ scale: [1, 1.1, 1] }}
                                 transition={{ duration: 2, repeat: Infinity }}
-                                className="text-lg font-bold text-green-400"
+                                className="text-lg font-bold text-pink-400"
                               >
-                                +23%
+                                до 10%
                               </motion.div>
                             </div>
                             <div className="flex items-end space-x-1 h-8">
@@ -183,7 +183,7 @@ export default function InnovativeServices() {
                                   whileInView={{ height: `${height * 4}px` }}
                                   transition={{ duration: 0.8, delay: 1.6 + i * 0.1 }}
                                   viewport={{ once: true }}
-                                  className="bg-blue-500 w-1 rounded-t"
+                                  className="bg-pink-500 w-1 rounded-t"
                                 ></motion.div>
                               ))}
                             </div>
@@ -192,7 +192,7 @@ export default function InnovativeServices() {
                       </motion.div>
                     )}
 
-                    {/* Google Ads Mockup */}
+                    {/* Deposit Mockup */}
                     {service.mockup === "google-ads" && (
                       <motion.div
                         initial={{ opacity: 0 }}
@@ -203,62 +203,45 @@ export default function InnovativeServices() {
                         <div className="bg-gray-800 rounded-lg p-3 h-full">
                           <div className="flex items-center space-x-2 mb-4">
                             <motion.div
-                              animate={{ rotate: [0, 360] }}
-                              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                              className="w-8 h-8 rounded-full bg-white flex items-center justify-center"
+                              animate={{ scale: [1, 1.05, 1] }}
+                              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                              className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center"
                             >
-                              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                                <path
-                                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                                  fill="#4285F4"
-                                />
-                                <path
-                                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                                  fill="#34A853"
-                                />
-                                <path
-                                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                                  fill="#FBBC05"
-                                />
-                                <path
-                                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                                  fill="#EA4335"
-                                />
-                              </svg>
+                              <span className="text-white text-xs font-bold">₽</span>
                             </motion.div>
                             <div>
-                              <div className="text-xs text-white">Google Ads</div>
-                              <div className="text-xs text-gray-400">Панель управления</div>
+                              <div className="text-xs text-white">Вклад «Максимум»</div>
+                              <div className="text-xs text-gray-400">18% годовых</div>
                             </div>
                           </div>
                           <div className="space-y-2">
                             <div className="flex justify-between text-xs">
-                              <span className="text-gray-400">Показы</span>
+                              <span className="text-gray-400">Сумма вклада</span>
                               <motion.span
                                 animate={{ opacity: [0.5, 1, 0.5] }}
                                 transition={{ duration: 2, repeat: Infinity }}
-                                className="text-green-400"
+                                className="text-pink-400"
                               >
-                                +15.2K
+                                500 000 ₽
                               </motion.span>
                             </div>
                             <div className="flex justify-between text-xs">
-                              <span className="text-gray-400">Клики</span>
+                              <span className="text-gray-400">Доход в мес.</span>
                               <motion.span
                                 animate={{ opacity: [0.5, 1, 0.5] }}
                                 transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                                className="text-blue-400"
+                                className="text-purple-400"
                               >
-                                1 247
+                                7 500 ₽
                               </motion.span>
                             </div>
                             <div className="flex justify-between text-xs">
-                              <span className="text-gray-400">CTR</span>
-                              <span className="text-gray-300">8,2%</span>
+                              <span className="text-gray-400">Срок</span>
+                              <span className="text-gray-300">12 мес.</span>
                             </div>
                             <div className="flex justify-between text-xs">
-                              <span className="text-gray-400">Quality Score</span>
-                              <span className="text-green-400">9/10</span>
+                              <span className="text-gray-400">Итого</span>
+                              <span className="text-pink-400 font-bold">590 000 ₽</span>
                             </div>
                           </div>
                         </div>
@@ -269,7 +252,7 @@ export default function InnovativeServices() {
 
                 <div className="flex flex-col justify-between h-auto">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-gray-400 leading-relaxed text-sm">{service.description}</p>
@@ -421,7 +404,7 @@ export default function InnovativeServices() {
 
                 <div className="flex flex-col justify-between h-auto">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-gray-400 leading-relaxed text-sm">{service.description}</p>
@@ -445,7 +428,7 @@ export default function InnovativeServices() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="md:col-span-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-gray-400 leading-relaxed text-sm mb-6">{service.description}</p>
@@ -468,8 +451,8 @@ export default function InnovativeServices() {
 
                   <div className="flex justify-end items-center">
                     <a href="#services">
-                      <AnimatedButton className="bg-white text-black hover:bg-gray-100 px-6 py-2">
-                        <span className="flex items-center">Подробнее</span>
+                      <AnimatedButton className="bg-gradient-to-r from-pink-500 to-purple-600 text-white hover:from-pink-600 hover:to-purple-700 px-6 py-2">
+                        <span className="flex items-center">Открыть счёт</span>
                       </AnimatedButton>
                     </a>
                   </div>
@@ -494,7 +477,7 @@ export default function InnovativeServices() {
                               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                             </div>
                             <div className="bg-gray-600 text-gray-300 text-xs px-2 py-1 rounded flex-1 text-center">
-                              www.pulsedigital.agency
+                              www.pinkipay.ru
                             </div>
                           </div>
                         </div>

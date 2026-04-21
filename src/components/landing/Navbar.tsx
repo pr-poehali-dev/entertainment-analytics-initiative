@@ -13,11 +13,11 @@ export default function Navbar() {
         className="relative bg-gray-900/60 backdrop-blur-md border rounded-2xl shadow-lg overflow-hidden"
         animate={{
           borderColor: [
-            "rgba(59, 130, 246, 0.3)",
-            "rgba(147, 51, 234, 0.3)",
-            "rgba(236, 72, 153, 0.3)",
-            "rgba(34, 197, 94, 0.3)",
-            "rgba(59, 130, 246, 0.3)",
+            "rgba(233, 30, 140, 0.4)",
+            "rgba(124, 58, 237, 0.4)",
+            "rgba(244, 114, 182, 0.4)",
+            "rgba(167, 139, 250, 0.4)",
+            "rgba(233, 30, 140, 0.4)",
           ],
         }}
         transition={{
@@ -31,11 +31,11 @@ export default function Navbar() {
           className="absolute inset-0 rounded-2xl"
           animate={{
             boxShadow: [
-              "0 0 20px rgba(59, 130, 246, 0.2)",
-              "0 0 20px rgba(147, 51, 234, 0.2)",
-              "0 0 20px rgba(236, 72, 153, 0.2)",
-              "0 0 20px rgba(34, 197, 94, 0.2)",
-              "0 0 20px rgba(59, 130, 246, 0.2)",
+              "0 0 20px rgba(233, 30, 140, 0.3)",
+              "0 0 20px rgba(124, 58, 237, 0.3)",
+              "0 0 20px rgba(244, 114, 182, 0.3)",
+              "0 0 20px rgba(167, 139, 250, 0.3)",
+              "0 0 20px rgba(233, 30, 140, 0.3)",
             ],
           }}
           transition={{
@@ -49,24 +49,24 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <a href="/" className="flex items-center space-x-3">
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Pulse Digital
+                <span className="text-xl font-bold bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400 bg-clip-text text-transparent">
+                  PinkiPay
                 </span>
               </a>
             </div>
 
             <div className="hidden md:block">
               <div className="flex items-center space-x-8">
-                <a href="#services" className="text-sm text-gray-300 hover:text-blue-400 transition-colors">
-                  Услуги
+                <a href="#services" className="text-sm text-gray-300 hover:text-pink-400 transition-colors">
+                  Продукты
                 </a>
-                <a href="#artists" className="text-sm text-gray-300 hover:text-purple-400 transition-colors">
-                  Клиенты
+                <a href="#artists" className="text-sm text-gray-300 hover:text-fuchsia-400 transition-colors">
+                  Клиентам
                 </a>
-                <a href="#success-stories" className="text-sm text-gray-300 hover:text-green-400 transition-colors">
-                  Кейсы
+                <a href="#success-stories" className="text-sm text-gray-300 hover:text-purple-400 transition-colors">
+                  О банке
                 </a>
-                <a href="#contact" className="text-sm text-gray-300 hover:text-orange-400 transition-colors">
+                <a href="#contact" className="text-sm text-gray-300 hover:text-pink-300 transition-colors">
                   Контакты
                 </a>
               </div>
@@ -77,8 +77,8 @@ export default function Navbar() {
                 Войти
               </Button>
               <a href="#get-started">
-                <AnimatedButton size="sm" className="bg-white text-black hover:bg-gray-100">
-                  Начать
+                <AnimatedButton size="sm" className="bg-gradient-to-r from-pink-500 to-purple-600 text-white hover:from-pink-600 hover:to-purple-700">
+                  Открыть счёт
                 </AnimatedButton>
               </a>
             </div>
@@ -95,21 +95,21 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-700/50 bg-gray-900/80 backdrop-blur-md rounded-b-2xl">
             <div className="px-6 py-4 space-y-3">
-              <a href="#services" className="block text-gray-300 hover:text-blue-400">
-                Услуги
+              <a href="#services" className="block text-gray-300 hover:text-pink-400">
+                Продукты
               </a>
-              <a href="#artists" className="block text-gray-300 hover:text-purple-400">
-                Клиенты
+              <a href="#artists" className="block text-gray-300 hover:text-fuchsia-400">
+                Клиентам
               </a>
-              <a href="#success-stories" className="block text-gray-300 hover:text-green-400">
-                Кейсы
+              <a href="#success-stories" className="block text-gray-300 hover:text-purple-400">
+                О банке
               </a>
-              <a href="#contact" className="block text-gray-300 hover:text-orange-400">
+              <a href="#contact" className="block text-gray-300 hover:text-pink-300">
                 Контакты
               </a>
               <div className="pt-3 border-t border-gray-700">
                 <a href="#get-started" className="block">
-                  <AnimatedButton className="w-full bg-white text-black hover:bg-gray-100">Начать</AnimatedButton>
+                  <AnimatedButton className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white hover:from-pink-600 hover:to-purple-700">Открыть счёт</AnimatedButton>
                 </a>
               </div>
             </div>
