@@ -100,18 +100,18 @@ export default function InnovativeServices() {
                                 whileInView={{ scale: 1, opacity: 1 }}
                                 transition={{ duration: 0.3, delay: 0.2 }}
                                 viewport={{ once: true }}
-                                className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center"
+                                className="w-5 h-5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-md flex items-center justify-center text-white text-xs font-bold"
                               >
-                                <Instagram className="w-3 h-3 text-white" />
+                                ₽
                               </motion.div>
                               <motion.div
                                 initial={{ scale: 0, opacity: 0 }}
                                 whileInView={{ scale: 1, opacity: 1 }}
                                 transition={{ duration: 0.3, delay: 0.4 }}
                                 viewport={{ once: true }}
-                                className="w-5 h-5 bg-red-600 rounded-md flex items-center justify-center"
+                                className="w-5 h-5 bg-pink-600 rounded-md flex items-center justify-center text-white text-xs font-bold"
                               >
-                                <Youtube className="w-3 h-3 text-white" />
+                                %
                               </motion.div>
                               <motion.div
                                 initial={{ scale: 0, opacity: 0 }}
